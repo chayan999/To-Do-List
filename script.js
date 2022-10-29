@@ -5,9 +5,11 @@ const ulEl = document.querySelector('.list')
 //----gat local storage
 
 let list = JSON.parse(localStorage.getItem('list'))
-list.forEach(task => {
-    toDoList(task)
-})
+if (list) {
+    list.forEach(task => {
+        toDoList(task)
+    })
+}
 
 fromEl.addEventListener('submit', (event) => {
     event.preventDefault();
